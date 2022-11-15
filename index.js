@@ -21,7 +21,8 @@ const renderNote = (text = '') => {
     const textArea = newNote.querySelector('textarea')
 
     textArea.value = text
-    main.innerHTML = text
+    main.innerHTML = marked.parse(text)
+    
 
     deleteBtn.addEventListener('click', () => {
         newNote.remove()
@@ -29,8 +30,10 @@ const renderNote = (text = '') => {
     })
 
     editBtn.addEventListener('click', () => {
+        
         main.classList.toggle('hidden')
         textArea.classList.toggle('hidden')
+        
     })
 
     textArea.addEventListener('input', (e) => {
