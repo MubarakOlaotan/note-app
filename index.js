@@ -68,6 +68,3 @@ const notes = JSON.parse(localStorage.getItem('notes'))
 if (notes) {
     notes.forEach(note => renderNote(text = note))
 }
-
-
-
